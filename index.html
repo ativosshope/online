@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sunlit — Decoração de Janela & Moda Praia</title>
-<meta name="description" content="Suncatchers de cristal, ganchos de ventosa para janela, biquínis e saídas de praia. Frete para todo o Brasil." />
-<link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atelier Belle — Moda Feminina Premium</title>
+<meta name="description" content="Loja de moda feminina com peças exclusivas: vestidos, conjuntos esportivos e looks elegantes para o dia a dia.">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="nav">
-  <div class="container nav-inner">
-    <a href="#" class="logo">Sunlit<span>.</span></a>
+<header class="header">
+  <div class="container nav">
+    <a href="#" class="logo">Atelier <span>Belle</span></a>
     <nav>
       <a href="#produtos">Produtos</a>
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
     </nav>
-    <button class="cart-btn" id="cartBtn" aria-label="Abrir carrinho">
-      Carrinho <span class="badge" id="cartCount">0</span>
-    </button>
+    <button class="cart-btn" id="cartBtn">Sacola <span id="cartCount">0</span></button>
   </div>
 </header>
 
 <section class="hero">
   <div class="container hero-inner">
-    <div class="hero-text">
-      <span class="eyebrow">Coleção verão</span>
-      <h1>Luz, leveza e <em>bem-estar</em> em casa.</h1>
-      <p>Suncatchers de cristal, ganchos de ventosa e moda praia para iluminar seus dias.</p>
-      <a href="#produtos" class="btn-primary">Ver produtos</a>
-    </div>
-    <div class="hero-image">
-      <img src="images/hero.jpg" alt="Janela ensolarada com plantas e suncatchers" />
-    </div>
+    <p class="eyebrow">Coleção 2026</p>
+    <h1>Elegância em cada peça</h1>
+    <p class="lead">Moda feminina premium com entrega para todo o Brasil. Tecidos selecionados, caimento impecável.</p>
+    <a href="#produtos" class="btn-primary">Ver coleção</a>
   </div>
 </section>
 
-<section id="produtos" class="products">
-  <div class="container">
-    <h2>Nossos produtos</h2>
-    <p class="section-sub">Tudo testado, embalado com carinho e enviado para todo o Brasil.</p>
-    <div class="filters">
-      <button class="chip active" data-filter="all">Todos</button>
-      <button class="chip" data-filter="decoracao">Decoração</button>
-      <button class="chip" data-filter="moda">Moda Praia</button>
-    </div>
-    <div class="grid" id="grid"></div>
-  </div>
+<section class="features container">
+  <div><strong>Frete grátis</strong><span>Acima de R$ 299</span></div>
+  <div><strong>Parcele em 6x</strong><span>Sem juros</span></div>
+  <div><strong>Troca fácil</strong><span>Em até 30 dias</span></div>
+  <div><strong>Pagamento seguro</strong><span>Pix, cartão e boleto</span></div>
 </section>
 
-<section id="sobre" class="about">
-  <div class="container about-inner">
-    <h2>Feito para o seu cantinho favorito</h2>
-    <p>A Sunlit nasceu da paixão por casas iluminadas e dias de praia. Selecionamos peças simples que trazem cor e leveza para o dia a dia — da janela da cozinha à beira do rio.</p>
-  </div>
+<section class="products container" id="produtos">
+  <h2>Mais desejados</h2>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="productGrid"></div>
+</section>
+
+<section class="about container" id="sobre">
+  <h2>Sobre a Atelier Belle</h2>
+  <p>Somos uma marca brasileira dedicada a criar peças atemporais que valorizam a mulher moderna. Cada item da nossa coleção é pensado para unir conforto, qualidade e estilo.</p>
 </section>
 
 <footer id="contato">
   <div class="container footer-inner">
     <div>
-      <p class="logo">Sunlit<span>.</span></p>
-      <p class="muted">CNPJ 00.000.000/0001-00 · Atendimento: contato@sunlit.com.br</p>
+      <h3>Atelier Belle</h3>
+      <p>Moda feminina premium</p>
     </div>
-    <p class="muted">© 2026 Sunlit. Todos os direitos reservados.</p>
+    <div>
+      <h4>Contato</h4>
+      <p>contato@atelierbelle.com.br</p>
+      <p>(11) 90000-0000</p>
+    </div>
+    <div>
+      <h4>Atendimento</h4>
+      <p>Seg a Sex — 9h às 18h</p>
+    </div>
   </div>
+  <p class="copy">© 2026 Atelier Belle. Todos os direitos reservados.</p>
 </footer>
 
-<aside class="drawer" id="drawer" aria-hidden="true">
-  <div class="drawer-head">
-    <h3>Seu carrinho</h3>
-    <button id="closeDrawer" aria-label="Fechar">×</button>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>Sua sacola</h3>
+    <button id="closeCart">×</button>
   </div>
-  <div class="drawer-body" id="drawerBody"></div>
-  <div class="drawer-foot">
-    <div class="total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
-    <button class="btn-primary full" id="checkoutBtn">Finalizar pedido</button>
+  <div id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="total">Total: <span id="cartTotal">R$ 0,00</span></div>
+    <button class="btn-primary" onclick="alert('Checkout em breve!')">Finalizar compra</button>
   </div>
-</aside>
+</div>
 <div class="overlay" id="overlay"></div>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
